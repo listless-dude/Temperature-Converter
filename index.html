@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Temperature Converter</title>
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body style="margin-top: 100px">
+    <div class="container">
+        <div class="row">
+            <!-- Used Bootsptap Grids to adjust the UI -->
+            <div class="col-md-8 offset-md-2">
+                <p class="display-4 text-centre" style="margin-bottom: 30px">Temperature Converter 
+                    <img src="images/thermometer.svg" height="45px" width="50px" title="Thermometer icon taken from FlatIcons.com"/>
+                </p>
+                <!-- Created a form for the user input which takes the value of temperature in Fahrenheit -->
+                <form style="margin-bottom: 30px">
+                    <div class="form-group">
+                        <input id="fahrenheit" 
+                        type="number" 
+                        class="form-control form-control-lg" 
+                        placeholder="Enter temperature in fahrenheit">
+                    </div>
+                </form>
+                <!-- Used Bootstrap Cards for the output -->
+                <div id="cards">
+                    <div class="card bg-light mb-3">
+                            <div class="card-body">
+                            <h5 class="card-title">Celcius:</h5>
+                            <p id="outputcelcius" class="card-text"></p>
+                            </div>
+                    </div>
+                    <div class="card bg-light mb-3">
+                            <div class="card-body">
+                            <h5 class="card-title">Kelvin:</h5>
+                            <p id="outputkelvin" class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
