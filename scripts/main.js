@@ -1,17 +1,51 @@
-// When User Visits the page for the first time, the cards are invisble.
-document.getElementById('cards').style.visibility = 'hidden';
+let fahrenheit = document.getElementById('fahrenheit');
+let celcius = document.getElementById('celcius');
+let kelvin = document.getElementById('kelvin');
 
-// When the User enters inputs data, the calculation is done in realtime.
-document.getElementById('fahrenheit').addEventListener('input', function(e){
-
-    const kelvin = 273.15;              // Declared constant value of Kelvin.
+fahrenheit.addEventListener('input', function(e){
     let fahrenheit = e.target.value;    // Taking the value of fahrenheit from the User input.
 
-    let celciusfromfahrenheit = ((fahrenheit - 32) * 5/9).toFixed(2);
+    let celciusfromfahrenheit = Math.round((fahrenheit - 32) * 5/9);
+    let kelvinfromfahrenheit = Math.round((fahrenheit - 32) * 5/9 + 273);
 
-    // Set the calculated value inside the card.
-    document.getElementById('outputcelcius').innerHTML = celciusfromfahrenheit + " °C";
+    // Set the calculated value inside the number fields.
+    if (fahrenheit == ''){
+        celcius.value = '';
+        kelvin.value = '';
+    } else {
+        celcius.value = celciusfromfahrenheit;
+        kelvin.value = kelvinfromfahrenheit;
+    }
+});
 
-    // When the User inputs data, the cards become visible.
-    document.getElementById('cards').style.visibility = 'visible';
+celcius.addEventListener('input', function(a){
+    let celcius = a.target.value;    // Taking the value of celcius from the User input.
+
+    let fahrenheitfromcelcius = Math.round((celcius * 9/5) + 32);
+    let kelvinfromcelcius = Math.round(celcius + 273);
+
+    // Set the calculated value inside the number fields.
+    if (celcius == ''){
+        fahrenheit.value = '';
+        kelvin.value = '';
+    } else {
+        fahrenheit.value = fahrenheitfromcelcius;
+        kelvin.value = kelvinfromcelcius;
+    }
+});
+
+kelvin.addEventListener('input', function(b){
+    let kelvin = b.target.value;    // Taking the value of celcius from the User input.
+
+    let fahrenheitfromkelvin = Math.round(kelvin - 273);
+    let celciusfromkelvin = Math.round((kelvin - 273) * 9/5 + 32);
+
+    // Set the calculated value inside the number fields.
+    if (kelvin == ''){
+        celcius.value = '';
+        fahrenheit.value = '';
+    } else {
+        celcius.value = fahrenheitfromkelvin;
+        fahrenheit.value = celciusfromkelvin;
+    }
 });

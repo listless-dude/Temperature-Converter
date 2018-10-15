@@ -13,48 +13,34 @@
         <div class="row">
             <!-- Used Bootsptap Grids to adjust the UI -->
             <div class="col-md-8 offset-md-2">
-                <p class="display-4 text-centre" style="margin-bottom: 20px">Temperature Converter 
+                <p class="display-4 text-center" style="margin-bottom: 20px">Temperature Converter 
                     <img src="images/thermometer.svg" height="45px" width="50px" title="Thermometer icon taken from FlatIcons.com"/>
                 </p>
+                <hr>
                 <!-- Created a form for the user input which takes the value of temperature in Fahrenheit -->
                 <form>
-                    <div class="row form-group">
-                        <label for="from" class="col-sm-2 col-form-label">From</label>
+                    <div class="form-group row mt-4">
+                        <label for="fahrenheit" class="col-sm-2 col-form-label">Fahrenheit:</label>
                         <div class="col-sm-10">
-                            <select id="from" class="custom-select">
-                                <option selected>Fahrenheit</option>
-                                <option value="1">Celcius</option>
-                                <option value="2">Kelvin</option>
-                            </select>
+                            <input id="fahrenheit" 
+                            type="number" 
+                            class="form-control mb-3">
                         </div>
-                    </div>
-                    <div class="row form-group">
-                        <label for="to" class="col-sm-2 col-form-label">To</label>
+                        <label for="celcius" class="col-sm-2 col-form-label">Celcius:</label>
                         <div class="col-sm-10">
-                            <select id="to" class="custom-select">
-                            <option selected>Celcius</option>
-                            <option value="1">Kelvin</option>
-                            <option value="2">Fahrenheit</option>
-                            </select>
-                        </div> 
-                    </div>
-                    <div class="form-group">
-                        <input id="fahrenheit" 
-                        type="number" 
-                        class="form-control form-control-lg" 
-                        placeholder="Enter temperature in fahrenheit">
+                            <input type="number" 
+                            id="celcius"
+                            class="form-control mb-3">
+                        </div>
+                        <label for="kelvin" class="col-sm-2 col-form-label">Kelvin:</label>
+                        <div class="col-sm-10">
+                            <input type="number" 
+                            id="kelvin"
+                            class="form-control mb-3">
+                        </div>
                     </div> 
                 </form>
-                <!-- Used Bootstrap Cards for the output -->
-                <div id="cards">
-                    <div class="card bg-light mb-3">
-                            <div class="card-body">
-                            <h5 class="card-title">Celcius:</h5>
-                            <p id="outputcelcius" class="card-text"></p>
-                            </div>
-                    </div>
-                    </div>
-                </div>
+                <p class="font-weight-light text-center">How to use: Enter any one of the value and the other two will be calculated.</p>
             </div>
         </div>
     </div>
