@@ -1,4 +1,4 @@
 # Temperature-Converter
 General Temperature Converter using Bootstrap and JavaScript.
 
-Takes input from the user in Fahrenheit and returns the coverted value in Celcius and Kelvin.
+This is a little more advanced version compared to that of master branch. Now, you can select which from which temperature unit you want to convert to another unit.
